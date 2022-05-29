@@ -3,12 +3,18 @@
     <h3>Child Component 2</h3>
     <p>Ben User.vue isimli Parent Component'in içerisindeki bir diğer Child componentim</p>
     <p>Kullanıcı Yaşı : {{age}} </p>
-    <button @click="age = age+5 " >Yaş bilgisini değiştir</button>
+    <button @click="changeAge" >Yaş bilgisini değiştir</button>
   </div>
 </template>
 <script>
 export default {
-  props : ["age"]
+  props : ["age"],
+  methods : {
+    changeAge(){
+      this.age = 30
+      this.$emit("ageWasEdited", this.age)
+    }
+  }
 }
 </script>
 

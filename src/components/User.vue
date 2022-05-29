@@ -8,7 +8,7 @@
     <hr>
     <div class="row">
       <app-user-detail :age="age"  @data ="childData = $event " :name="title" ></app-user-detail>
-      <app-user-edit :age="age" ></app-user-edit>
+      <app-user-edit @ageWasEdited ="age = $event" :age="age" ></app-user-edit>
     </div>
   </div>
 </template>
