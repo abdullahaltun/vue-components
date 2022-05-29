@@ -2,9 +2,15 @@
   <div class="col-md-s6">
     <h3>Child Component 2</h3>
     <p>Ben User.vue isimli Parent Component'in içerisindeki bir diğer Child componentim</p>
+    <p>Kullanıcı Yaşı : {{age}} </p>
+    <button @click="age = age+5 " >Yaş bilgisini değiştir</button>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+  props : ["age"]
+}
+</script>
 
 <style scoped>
   div {
